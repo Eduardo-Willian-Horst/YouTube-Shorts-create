@@ -37,6 +37,9 @@ def download_video(url, folder="."):
         "format": "22/18",
         "noplaylist": True,
         "quiet": False,
+        # Opções para evitar erro 403
+        "extractor_args": {"youtube": {"player_client": ["android", "web"]}},
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
     }
     with YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])

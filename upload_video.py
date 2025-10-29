@@ -37,7 +37,8 @@ def upload_video(youtube, file_path, title, description, category, privacy):
             'categoryId': category
         },
         'status': {
-            'privacyStatus': privacy
+            'privacyStatus': privacy,
+            'madeForKids': False
         }
     }
     media = MediaFileUpload(file_path, chunksize=-1, resumable=True)
